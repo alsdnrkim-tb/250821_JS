@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 배열 구조 분해
+      const arr = [5, 10, 15, 20, 25, 30];
+      console.log(arr);
+      const a1 = arr[1];
+      const a2 = arr[2];
+      const a3 = arr[3];
+      console.log(a1, a2, a3);
+      // 이렇게 표현하면 각각 하나씩 불러서 선택하여 출력
+      const [a, b, c, d] = arr;
+      console.log(a, b, c, d);
+      // 똑같이 각각 하나씩 불러서 선택출력이지만 const 안에 바로 선언할 수도 있다
+
+      // 객체 구조 분해
+      const obj = { x: 1, y: 2, z: 3 };
+      console.log(obj);
+      // 배열은 [위치] = 배열
+      // 객체는 {이름} = 객체
+      const { x, y, z } = obj;
+      console.log(z);
+      console.log(x, z);
+      console.log(y);
+      // 없는걸 호출하면 항상 undefined가 나온다
+
+      const arrs = [1, 2, 3];
+      const arrs2 = [];
+      for (const a of arrs) {
+        arrs2.push(a);
+      }
+      console.log(arrs2);
+      const arrs3 = [...arrs];
+      console.log(...arrs3);
+      console.log(arrs3);
+      const arrs4 = [...arr, 4, 5];
+      console.log(arrs4);
+
+      const arrs5 = [arr, arr, 5]; // ...없이 배열을 넣게 되면 '배열' 자체가 들어감
+      console.log(arrs4);
+    </script>
+  </body>
+</html>
