@@ -89,19 +89,28 @@
           this.language = language;
         }
         coding() {
-          console.log(`${this.language}코딩`);
+          console.log(`${this.language} 코딩!!!`);
         }
       }
       const p = new Programmer("Java");
       p.coding();
 
       class CloudProgrammer extends Programmer {
-        constructor(language) {
-          super(language);
+        // 알아서 오버라이딩
+        constructor() {
+          super("AWS");
+          this.grade = "A+";
+        }
+        // @Overriding -> 따로 없음. 다만 super를 통해서 생성자나 이전 메서드, 멤버변수(프로퍼티)를 호출할 수 있음.
+        coding() {
+          // super.coding
+          console.log("클라우드 코딩!");
         }
       }
-      const cp = new CloudProgrammer("AWS");
+      // 별 요청이 없으면 생성자는 자동으로 상속...
+      const cp = new CloudProgrammer("Java");
       cp.coding();
+      console.log(cp);
     </script>
   </body>
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [1, 2, 3, 4, 5];
+      console.log(arr);
+
+      //   function makeDouble(x) {
+      //     return (x = x * 3);
+      //   }
+      //   const doubled = arr.map(makeDouble);
+      //   console.log(doubled);
+
+      const doubled = arr.map((x) => x * 3);
+      console.log(doubled);
+      // 이렇게 만들어둔게 위에 여러줄로 만든것과 같음 굳이 function 넣을 필요 없이 const에 바로 입력
+
+      const even = arr.filter((x) => x % 2 !== 0);
+      console.log(even);
+      // x값을 2로 나누었을 때 0이 나오는 값이 false인 경우의 수를 호출
+      const even1 = arr.filter((x) => x % 2 === 0);
+      console.log(even1);
+      // x값을 2로 나누었을 때 0이 나오는 값이 true인 경우의 수를 호출
+
+      // 중요한건 true를 반환하냐 false를 반환하냐를 잘 구분하는 능력?
+
+      const sum = arr.reduce((acc, cur) => acc + cur, 0);
+      console.log(sum);
+      // acc는 지금까지의 계산 결과의 누적
+      // cur은 이번의 값
+
+      const strArr = [
+        "점유율이늘고",
+        "접속자가 늘어",
+        "나는 쌀다팜",
+        "난 이미 쌀다팜",
+      ];
+      console.log(strArr.reduce((acc, cur) => acc + " " + cur, ""));
+
+      arr.forEach((x) => console.log(x));
+    </script>
+  </body>
+</html>
